@@ -1,0 +1,57 @@
+def draw_arbol():
+    glPushMatrix()
+    glScalef(escala_arbusto, escala_arbusto, escala_arbusto)
+    
+    # Esfera central grande
+    glPushMatrix()
+    glColor3f(0.0, 0.5, 0.0)
+    glTranslatef(0.0, 0.5, 0.0)
+    draw_sphere(0.6)
+    glPopMatrix()
+    
+    # Esfera izquierda (verde)
+    glPushMatrix()
+    glColor3f(0.0, 0.6, 0.0)
+    glTranslatef(-0.4, 0.4, 0.2)
+    draw_sphere(0.5)
+    glPopMatrix()
+    
+    # Esfera derecha (verde)
+    glPushMatrix()
+    glColor3f(0.0, 0.6, 0.0)
+    glTranslatef(0.4, 0.4, -0.2)
+    draw_sphere(0.5)
+    glPopMatrix()
+    
+    # Esfera superior (verde lima)
+    glPushMatrix()
+    glColor3f(0.2, 0.7, 0.2)
+    glTranslatef(0.1, 0.9, -0.1)
+    draw_sphere(0.45)
+    glPopMatrix()
+    
+    # Esfera frontal (verde claro)
+    glPushMatrix()
+    glColor3f(0.3, 0.8, 0.3)
+    glTranslatef(-0.1, 0.3, 0.5)
+    draw_sphere(0.4)
+    glPopMatrix()
+    
+    # Esfera trasera (verde oscuro)
+    glPushMatrix()
+    glColor3f(0.0, 0.5, 0.0)
+    glTranslatef(0.2, 0.35, -0.5)
+    draw_sphere(0.4)
+    glPopMatrix()
+    
+    # Tronco (cilindro café)
+    glPushMatrix()
+    glColor3f(0.55, 0.27, 0.07)
+    glTranslatef(0.0, -0.3, 0.0)
+    glRotatef(-90, 1, 0, 0)
+    quadric = gluNewQuadric()
+    gluCylinder(quadric, 0.15, 0.15, 0.3, 20, 20)
+    gluDeleteQuadric(quadric)
+    glPopMatrix()
+    
+    glPopMatrix()
